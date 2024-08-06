@@ -47,6 +47,12 @@ public class TestClass1 {
         System.out.println("Title is "+driver.getTitle());
     }
 
+    @Test
+    public void loadGoogle(){
+        driver.navigate().to("https://www.google.com/");
+        System.out.println("Title is "+driver.getTitle());
+    }
+
     @AfterTest
     public void closeBrowser(){
         driver.quit();
