@@ -21,18 +21,12 @@ public class TestClass1 {
 
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
-        // Remote mode
-        if ("grid".equals("normal")) {
-
             try {
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
-        } else {
-            driver = new ChromeDriver(chromeOptions);
-        }
-        driver.manage().window().maximize();
+          driver.manage().window().maximize();
     }
 
     @Test
