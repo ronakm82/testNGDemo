@@ -5,20 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
-
-import static java.lang.Boolean.TRUE;
 
 public class TestClass1 {
     private WebDriver driver;
-    private WebDriverWait wait;
+
     @BeforeTest
     public void launchDriver(){
         WebDriverManager.chromedriver().setup();
@@ -40,20 +36,20 @@ public class TestClass1 {
     }
 
     @Test
-    public void Test1() {
+    public void launchURL() {
        driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
        System.out.println("Title is "+driver.getTitle());
     }
 
     @Test
-    public void Test2(){
-        driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    public void verifyURL(){
+        driver.navigate().to("https://opensource-demo.orangehrmlive.com/");
         System.out.println("Title is "+driver.getTitle());
     }
 
     @Test
-    public void Test3(){
-        driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    public void loadPage(){
+        driver.navigate().to("https://duckduckgo.com/");
         System.out.println("Title is "+driver.getTitle());
     }
 
